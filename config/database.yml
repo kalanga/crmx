@@ -24,8 +24,10 @@ test:
   host: localhost
 
 production:
-  adapter: mysql2
+  adapter: pg
   encoding: utf8
-  database: crm_x_production
-  username: root
-  host: localhost
+  database: d2llbvuv5q7lbl
+  username: ktropmwobecpyp
+  password: ZU4F7VagyxgigZv-SelYpkDxMY
+  port: 5432
+  host: ec2-54-197-241-67.compute-1.amazonaws.com
