@@ -1,0 +1,114 @@
+<h1>Contact View</h1>
+<div ng-controller="ContactsCtrl" ng-app>
+
+  <table class="table-bordered">
+
+    <!-- For filter purpose of contacts-->
+    <thead>
+      <tr>
+        <td><input class="input_text" ng-model="search.first_name"></td>
+        <td><input class="input_text" ng-model="search.last_name"></td>
+        <td><input class="input_text" ng-model="search.email"></td>
+        <td><input class="input_text" ng-model="search.org"></td>
+        <td><input class="input_text" ng-model="search.events"></td>
+        <td><input class="input_text" ng-model="search.interests"></td>
+        <td><span class="input_text"><b>Filter</b></span></td>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <!-- For display contacts list-->
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Organization</th>
+        <th>Events</th>
+        <th>Interest</th>
+        <th><b>+</b></th>
+      </tr>
+
+      <tr ng-repeat="contact in contacts | filter:search">
+        <td>
+          <div class="all_input" id="first_name_{{contact.id}}">
+            <input type="text" name="first_name" ng-model="contact.first_name" class="input_text" value="{{contact.first_name}}" ng-blur="edit_contact_field('first_name',contact.first_name,contact.id)" />
+          </div>
+          <div id="div_first_name_{{contact.id}}" class="all_div" ng-click="show_input('first_name',contact.id)">
+            {{contact.first_name || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td>
+          <div class="all_input" id="last_name_{{contact.id}}">
+            <input type="text" name="last_name" ng-model="contact.last_name" class="input_text" value="{{contact.last_name}}" ng-blur="edit_contact_field('last_name',contact.last_name,contact.id)"/>
+          </div>
+          <div id="div_last_name_{{contact.id}}" class="all_div" ng-click="show_input('last_name',contact.id)">
+            {{contact.last_name || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td>
+          <div class="all_input" id="email_{{contact.id}}">
+            <input type="text" name="email" ng-model="contact.email" class="input_text" value="{{contact.email}}" ng-blur="edit_contact_field('email',contact.email,contact.id)"/>
+          </div>
+          <div id="div_email_{{contact.id}}" class="all_div" ng-click="show_input('email',contact.id)">
+            {{contact.email || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td>
+          <div class="all_input" id="org_{{contact.id}}">
+            <input type="text" name="org" ng-model="contact.org" class="input_text" value="{{contact.org}}" ng-blur="edit_contact_field('org',contact.org,contact.id)"/>
+          </div>
+          <div id="div_org_{{contact.id}}" class="all_div" ng-click="show_input('org',contact.id)">
+            {{contact.org || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td>
+          <div class="all_input" id="events_{{contact.id}}">
+            <input type="text" name="events" ng-model="contact.events" class="input_text" value="{{contact.events}}" ng-blur="edit_contact_field('events',contact.events,contact.id)"/>
+          </div>
+          <div id="div_events_{{contact.id}}" class="all_div" ng-click="show_input('events',contact.id)">
+            {{contact.events || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td>
+          <div class="all_input" id="interests_{{contact.id}}">
+            <input type="text" name="interests" ng-model="contact.interests" class="input_text" value="{{contact.interests}}" ng-blur="edit_contact_field('interests',contact.interests,contact.id)"/>
+          </div>
+          <div id="div_interests_{{contact.id}}" class="all_div" ng-click="show_input('interests',contact.id)">
+            {{contact.interests || '&nbsp;&nbsp;'}}
+          </div>
+        </td>
+
+        <td></td>
+
+      </tr>
+
+      <!-- Form for create new contact -->
+      <form ng-submit="createContact()">
+        <tr>
+          <td><input type="text" name="first_name" id="first_name" ng-model="contact.first_name" placeholder="First Name" class="input_text" required=""></td>
+          <td><input type="text" name="last_name" id="last_name" ng-model="contact.last_name" placeholder="Last Name" class="input_text" required=""></td>
+          <td><input type="email" name="email" id="email" ng-model="contact.email" placeholder="Email" class="input_text" ></td>
+          <td><input type="text" name="org" id="org" ng-model="contact.org" placeholder="Organization" class="input_text" required=""></td>
+          <td><input type="text" name="events" id="events" ng-model="contact.events" placeholder="Events" class="input_text"></td>
+          <td><input type="text" name="interests" id="interests" ng-model="contact.interests" placeholder="Interests" class="input_text"></td>
+          <td><input type="image" name="submit" id="submit" value="submit" src="../assets/enter.png" style="width:14px;height: 14px;"/></td>
+        </tr>
+      </form>
+
+    </tbody>
+  </table>
+  <br/>
+
+  <!-- For upload csv -->
+  <div class="pull-right">
+    Upload CSV:
+    <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+  </div>
+</div>
+

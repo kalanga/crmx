@@ -1,0 +1,10 @@
+var module = angular.module("Contacts", ["Contacts.filters", "Contacts.services","Contacts.directives"]);
+
+module.config(['$routeProvider', function($routeProvider) {
+  console.log("app router");
+  $routeProvider.when("/contacts", {templateUrl: "<%= asset_path 'contacts/contacts.html' %>"});
+  $routeProvider.when("/contacts_list", {templateUrl: "<%= asset_path 'contacts/contacts_list.html' %>"});
+  $routeProvider.otherwise({redirectTo: "/contacts"});
+
+}]);
+

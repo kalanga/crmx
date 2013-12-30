@@ -1,0 +1,31 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+# development:
+#   adapter: sqlite3
+#   database: db/development.sqlite3
+#   pool: 5
+#   timeout: 5000
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: crm_x_development
+  username: root
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: crm_x_test
+  username: root
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: crm_x_production
+  username: root
+  host: localhost
