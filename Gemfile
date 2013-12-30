@@ -33,7 +33,7 @@ gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
+gem 'activerecord-postgresql-adapter'
 # Use unicorn as the app server
 # gem 'unicorn'
 
