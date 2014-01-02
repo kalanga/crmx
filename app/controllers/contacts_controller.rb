@@ -68,6 +68,14 @@ class ContactsController < ApplicationController
     contacts_list
   end
 
+  # For remove contacts within checkboxes
+  def remove_contacts
+    selected_contact_ids =  params[:selected_contact_ids]
+
+    Contact.where(:id => selected_contact_ids).destroy_all
+    contacts_list
+  end
+
   # For display contact_list
   def contacts_list
     @contacts = Contact.all

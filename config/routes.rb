@@ -7,6 +7,7 @@ CrmX::Application.routes.draw do
   get "contacts_list" => "contacts#contacts_list"
   post "update_contact" => "contacts#update_contact"
   post "contacts_upload" => "contacts#contacts_upload"
+  post "remove_contacts" => "contacts#remove_contacts"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -85,6 +85,40 @@ function ContactsCtrl($scope, $http) {
       });
   };
 
+  // For delete contacts with checkbox
+  $scope.chckedIndexs=[];
+  $scope.checkedIndex = function (contact) {
+    if ($scope.chckedIndexs.indexOf(contact) === -1) {
+      $scope.chckedIndexs.push(contact);
+    }
+    else {
+      $scope.chckedIndexs.splice($scope.chckedIndexs.indexOf(contact), 1);
+    }
+  }
+
+  $scope.remove=function(index){
+    console.log($scope.chckedIndexs);
+
+    var selected_contact_ids = []
+    angular.forEach($scope.chckedIndexs, function (value, index) {
+      console.log(value.id);
+      selected_contact_ids.push(value.id)
+//      var index = $scope.contacts.indexOf(value);
+//      $scope.contacts.splice($scope.contacts.indexOf(value), 1);
+    });
+    $scope.chckedIndexs = [];
+    var selected_contacts = {
+      selected_contact_ids: selected_contact_ids
+    }
+
+    $http.post('/remove_contacts', selected_contacts).
+      success(function(){
+        // contact added successfully
+        $scope.contact = {};
+        $scope.contact_list();
+      });
+  };
+
 }
 
 ContactsCtrl.$inject = ["$scope","$http"];
