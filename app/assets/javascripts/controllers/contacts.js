@@ -1,5 +1,11 @@
 function ContactsCtrl($scope, $http, $filter) {
 
+  $scope.clickedSomewhereElse = function(){
+    $(".all_input").hide();
+    $(".all_div").show();
+  };
+
+
   //  for display input box for edit
   $scope.show_input = function(field, id){
     var field_string = field+"_"+id;
