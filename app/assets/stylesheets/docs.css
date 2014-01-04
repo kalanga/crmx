@@ -242,4 +242,8 @@ img.cache {
 div.modal-body button {
   z-index: 1051;
 }
+.pull-right button
 
+{
+  margin-bottom: 12px;
+}

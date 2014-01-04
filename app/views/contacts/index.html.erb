@@ -100,15 +100,7 @@
           <td><input type="image" name="submit" id="submit" value="submit" src="../assets/enter.png" style="width:14px;height: 14px;"/></td>
         </tr>
       </form>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button ng-click="remove($index)" >Remove</button></td>
-      </tr>
+   
     </tbody>
   </table>
   <br/>
@@ -116,7 +108,17 @@
   <!-- For upload csv -->
   <div class="pull-right">
     Upload CSV:
-    <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-  </div>
-</div>
+
+    
+
+
+    <input id ="upload" type="file" name="file" onsubmit="angular.element(this).scope().uploadFile(this.files)" />
+     <button  id = "submit_upload" ng-click = "selectfile()">submit</button>
+     
+
+     </form>
+     <button  ng-click="remove($index)" >Remove</button>
+    </div>
+
+
 

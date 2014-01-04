@@ -118,7 +118,10 @@ function ContactsCtrl($scope, $http) {
         $scope.contact_list();
       });
   };
-
+  $scope.selectfile = function () {
+    var file_upload_id = document.getElementById("upload");
+   angular.element(file_upload_id).scope().uploadFile(file_upload_id.files)
+  }
 }
-
+  
 ContactsCtrl.$inject = ["$scope","$http"];
