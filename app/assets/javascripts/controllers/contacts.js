@@ -1,4 +1,4 @@
-function ContactsCtrl($scope, $http) {
+function ContactsCtrl($scope, $http, $filter) {
 
   //  for display input box for edit
   $scope.show_input = function(field, id){
@@ -85,8 +85,35 @@ function ContactsCtrl($scope, $http) {
       });
   };
 
-  // For delete contacts with checkbox
+  // For select all
   $scope.chckedIndexs=[];
+
+  $scope.select_all = function(status){
+    var filter = $filter("filter");
+    $scope.items = [/* your items here */]
+
+    $scope.selectAllFilteredItems = function (){
+      var filtered = filter($scope.items, $scope.search);
+
+      angular.forEach($scope.contacts, function(contact) {
+        contact.selected = true;
+      });
+    };
+//    console.log(filter($scope.search))
+
+    angular.forEach($scope.contacts, function (contact, index) {
+
+      if(status == true){
+        contact.checked = true;
+        $scope.chckedIndexs= $scope.contacts;
+      }else{
+        contact.checked = false;
+        $scope.chckedIndexs= []
+      }
+    });
+  }
+
+  // For delete contacts with checkbox
   $scope.checkedIndex = function (contact) {
     if ($scope.chckedIndexs.indexOf(contact) === -1) {
       $scope.chckedIndexs.push(contact);
@@ -97,11 +124,11 @@ function ContactsCtrl($scope, $http) {
   }
 
   $scope.remove=function(index){
-    console.log($scope.chckedIndexs);
+//    console.log($scope.chckedIndexs);
 
     var selected_contact_ids = []
     angular.forEach($scope.chckedIndexs, function (value, index) {
-      console.log(value.id);
+//      console.log(value.id);
       selected_contact_ids.push(value.id)
 //      var index = $scope.contacts.indexOf(value);
 //      $scope.contacts.splice($scope.contacts.indexOf(value), 1);
@@ -121,4 +148,4 @@ function ContactsCtrl($scope, $http) {
 
 }
 
-ContactsCtrl.$inject = ["$scope","$http"];
+ContactsCtrl.$inject = ["$scope","$http", "$filter"];

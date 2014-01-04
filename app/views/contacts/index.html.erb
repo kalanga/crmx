@@ -12,7 +12,7 @@
         <td><input class="input_text" ng-model="search.org"></td>
         <td><input class="input_text" ng-model="search.events"></td>
         <td><input class="input_text" ng-model="search.interests"></td>
-        <td><span class="input_text"><b>Filter</b></span></td>
+        <td><input type="checkbox" ng-model="all_checked" ng-change="select_all(all_checked)"> All</td>
       </tr>
     </thead>
 
@@ -26,7 +26,7 @@
         <th>Organization</th>
         <th>Events</th>
         <th>Interest</th>
-        <th><b>+</b></th>
+        <th> <b>+</b></th>
       </tr>
 
       <tr ng-repeat="contact in contacts | filter:search">
@@ -107,7 +107,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><button ng-click="remove($index)" >Remove</button></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -117,6 +117,8 @@
   <div class="pull-right">
     Upload CSV:
     <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+
+    <button ng-click="remove($index)" >Remove</button>
   </div>
 </div>
 
