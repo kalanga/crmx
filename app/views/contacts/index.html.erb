@@ -1,5 +1,5 @@
 <h1>Contact View</h1>
-<div ng-controller="ContactsCtrl" ng-app>
+<div ng-controller="ContactsCtrl" ng-app >
 
   <table class="table-bordered">
 
@@ -31,7 +31,7 @@
 
       <tr ng-repeat="contact in contacts | filter:search">
         <td>
-          <div class="all_input" id="first_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input"  id="first_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
             <input type="text" name="first_name" ng-model="contact.first_name" class="input_text" value="{{contact.first_name}}" ng-blur="edit_contact_field('first_name',contact.first_name,contact.id)" />
           </div>
           <div id="div_first_name_{{contact.id}}" class="all_div" ng-click="show_input('first_name',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
