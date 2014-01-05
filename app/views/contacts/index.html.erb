@@ -31,55 +31,55 @@
 
       <tr ng-repeat="contact in contacts | filter:search">
         <td>
-          <div class="all_input" id="first_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input" id="first_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('first_name',contact.id)">
             <input type="text" name="first_name" ng-model="contact.first_name" class="input_text" value="{{contact.first_name}}" ng-blur="edit_contact_field('first_name',contact.first_name,contact.id)" />
           </div>
-          <div id="div_first_name_{{contact.id}}" class="all_div" ng-click="show_input('first_name',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_first_name_{{contact.id}}" class="all_div" ng-click="show_input('first_name',contact.id)" click-anywhere-but-here="clickedSomewhereElse('first_name',contact.id)">
             {{contact.first_name || '&nbsp;&nbsp;'}}
           </div>
         </td>
 
         <td>
-          <div class="all_input" id="last_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()" >
+          <div class="all_input" id="last_name_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('last_name',contact.id)" >
             <input type="text" name="last_name" ng-model="contact.last_name" class="input_text" value="{{contact.last_name}}" ng-blur="edit_contact_field('last_name',contact.last_name,contact.id)"/>
           </div>
-          <div id="div_last_name_{{contact.id}}" class="all_div" ng-click="show_input('last_name',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_last_name_{{contact.id}}" class="all_div" ng-click="show_input('last_name',contact.id)" click-anywhere-but-here="clickedSomewhereElse('last_name',contact.id)">
             {{contact.last_name || '&nbsp;&nbsp;'}}
           </div>
         </td>
 
         <td>
-          <div class="all_input" id="email_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input" id="email_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('email',contact.id)">
             <input type="text" name="email" ng-model="contact.email" class="input_text" value="{{contact.email}}" ng-blur="edit_contact_field('email',contact.email,contact.id)"/>
           </div>
-          <div id="div_email_{{contact.id}}" class="all_div" ng-click="show_input('email',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_email_{{contact.id}}" class="all_div" ng-click="show_input('email',contact.id)" click-anywhere-but-here="clickedSomewhereElse('email',contact.id)">
             {{contact.email || '&nbsp;&nbsp;'}}
           </div>
         </td>
 
         <td>
-          <div class="all_input" id="org_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input" id="org_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('org',contact.id)">
             <input type="text" name="org" ng-model="contact.org" class="input_text" value="{{contact.org}}" ng-blur="edit_contact_field('org',contact.org,contact.id)"/>
           </div>
-          <div id="div_org_{{contact.id}}" class="all_div" ng-click="show_input('org',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_org_{{contact.id}}" class="all_div" ng-click="show_input('org',contact.id)" click-anywhere-but-here="clickedSomewhereElse('org',contact.id)">
             {{contact.org || '&nbsp;&nbsp;'}}
           </div>
         </td>
 
         <td>
-          <div class="all_input" id="events_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input" id="events_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('events',contact.id)">
             <input type="text" name="events" ng-model="contact.events" class="input_text" value="{{contact.events}}" ng-blur="edit_contact_field('events',contact.events,contact.id)"/>
           </div>
-          <div id="div_events_{{contact.id}}" class="all_div" ng-click="show_input('events',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_events_{{contact.id}}" class="all_div" ng-click="show_input('events',contact.id)" click-anywhere-but-here="clickedSomewhereElse('events',contact.id)">
             {{contact.events || '&nbsp;&nbsp;'}}
           </div>
         </td>
 
         <td>
-          <div class="all_input" id="interests_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse()">
+          <div class="all_input" id="interests_{{contact.id}}" click-anywhere-but-here="clickedSomewhereElse('interests',contact.id)">
             <input type="text" name="interests" ng-model="contact.interests" class="input_text" value="{{contact.interests}}" ng-blur="edit_contact_field('interests',contact.interests,contact.id)"/>
           </div>
-          <div id="div_interests_{{contact.id}}" class="all_div" ng-click="show_input('interests',contact.id)" click-anywhere-but-here="clickedSomewhereElse()">
+          <div id="div_interests_{{contact.id}}" class="all_div" ng-click="show_input('interests',contact.id)" click-anywhere-but-here="clickedSomewhereElse('interests',contact.id)">
             {{contact.interests || '&nbsp;&nbsp;'}}
           </div>
         </td>

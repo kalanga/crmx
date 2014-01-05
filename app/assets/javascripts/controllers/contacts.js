@@ -1,8 +1,12 @@
 function ContactsCtrl($scope, $http, $filter) {
 
-  $scope.clickedSomewhereElse = function(){
+  $scope.clickedSomewhereElse = function(field, id){
+
+    var field_string = field+"_"+id;
     $(".all_input").hide();
     $(".all_div").show();
+    $("#div_"+field_string).hide();
+    $("#"+field_string).show();
   };
 
 
