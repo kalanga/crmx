@@ -1,9 +1,13 @@
 function ContactsCtrl($scope, $http, $filter) {
 
-  $scope.clickedSomewhereElse1 = function(){
-    alert(1)
+  $scope.clickedSomewhereElse1 = function(e){
+     $(".table-bordered").one('click', function(event) {
+     event.stopPropagation();
+     
+});
      $(".all_input").hide();
     $(".all_div").show();
+     
   };
 
 
