@@ -1,14 +1,5 @@
 function ContactsCtrl($scope, $http, $filter) {
 
-  $scope.clickedSomewhereElse = function(field, id){
-
-    var field_string = field+"_"+id;
-    alert(1)
-    $(".all_input").hide();
-    $(".all_div").show();
-    $("#div_"+field_string).hide();
-    $("#"+field_string).show();
-  };
 
 
   //  for display input box for edit
@@ -160,6 +151,12 @@ function ContactsCtrl($scope, $http, $filter) {
     var file_upload_id = document.getElementById("upload");
    angular.element(file_upload_id).scope().uploadFile(file_upload_id.files)
   }
+
+  $scope.clickedSomewhereElse = function(){
+alert(1)
+    $(".all_input").hide();
+    $(".all_div").show();
+  };
 }
 
   
