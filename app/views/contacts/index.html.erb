@@ -109,8 +109,9 @@
   <div class="pull-right">
     Upload CSV:
 
-    <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-
+    <input type="file" name="file" id ="upload"/>
+    <button ng-click="selectfile()" >submit</button>
+ 
 
     <button ng-click="remove($index)" >Remove</button>
   </div>
