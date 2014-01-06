@@ -101,7 +101,6 @@
             <input type="image" name="submit" id="submit" value="submit" src="../assets/enter.png" style="width:14px;height: 14px;"/></td>
         </tr>
       </form>
-
     </tbody>
   </table>
   <br/>
@@ -109,11 +108,9 @@
   <!-- For upload csv -->
   <div class="pull-right">
     Upload CSV:
-
     <input type="file" name="file" id ="upload"/>
     <button ng-click="selectfile()" >submit</button>
- 
-
+    <%= link_to image_tag("download-button.png", :border => 0, :style=>"width: 41px; height: 35px;",:title=>"Downlod CSV"),root_path(format: "csv")%>
     <button ng-click="remove($index)" >Remove</button>
   </div>
 </div>

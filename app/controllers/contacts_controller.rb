@@ -5,6 +5,10 @@ class ContactsController < ApplicationController
   # For display contacts on index
   def index
     @contacts = Contact.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @contacts.to_csv, :type => 'text/csv', :filename => "contacts.csv" }
+    end
   end
 
   # For create new contact
