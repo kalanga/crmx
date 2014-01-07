@@ -41,15 +41,18 @@ class ContactsController < ApplicationController
 
       #read contents from csv file
       contacts = []
+
       CSV.foreach(params[:file].tempfile) { |row|
-        contact_data = {}
-        contact_data["first_name"] = row[0]
-        contact_data["last_name"] = row[1]
-        contact_data["email"] = row[2]
-        contact_data["org"] = row[3]
-        contact_data["events"] = row[4]
-        contact_data["interests"] = row[5]
-        contacts << contact_data
+          row = row.first.split(",") if row.count == 1
+          
+          contact_data = {}
+          contact_data["first_name"] = row[0]
+          contact_data["last_name"] = row[1]
+          contact_data["email"] = row[2]
+          contact_data["org"] = row[3]
+          contact_data["events"] = row[4]
+          contact_data["interests"] = row[5]
+          contacts << contact_data
       }
 
       #remove first row with column name and make a new array with contacts
